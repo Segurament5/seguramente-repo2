@@ -4,13 +4,17 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #2e2e2e; /* Gris oscuro en lugar de negro para mejor contraste */
+  --text-on-light: #2e2e2e; /* Color para texto sobre fondo claro */
+  --text-on-lila: #1c1c1c; /* Negro suave para mejor contraste sobre lila */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --text-on-light: #f5f5f5; /* Color claro para fondo oscuro */
+    --text-on-lila: #ededed; /* Blanco suave en modo oscuro para fondo lila */
   }
 }
 

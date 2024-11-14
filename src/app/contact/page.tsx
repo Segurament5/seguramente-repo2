@@ -1,39 +1,39 @@
-"use client"
+"use client";
 
-import { Button } from '@/components/ui/button/Button'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card/Card'
-import Input from '@/components/ui/input/Input'
-import { Label } from '@/components/ui/label/Label'
-import TextArea from '@/components/ui/textArea/TextArea'
-import { useState } from 'react'
-
+import { Button } from '@/components/ui/button/Button';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card/Card';
+import Input from '@/components/ui/input/Input';
+import { Label } from '@/components/ui/label/Label';
+import Layout from '@/components/ui/layout/Layout';
+import TextArea from '@/components/ui/textArea/TextArea';
+import { useState } from 'react';
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: ''
-    })
+    });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target
-        setFormData(prevState => ({ ...prevState, [name]: value }))
-    }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({ ...prevState, [name]: value }));
+    };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault()
+    const handleSubmit = (e) => {
+        e.preventDefault();
         // Aquí iría la lógica para enviar el formulario
-        console.log('Formulario enviado:', formData)
+        console.log('Formulario enviado:', formData);
         // Resetear el formulario después del envío
-        setFormData({ name: '', email: '', message: '' })
-    }
+        setFormData({ name: '', email: '', message: '' });
+    };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-[#E6CED9] to-[#DEB8E9] flex items-center justify-center p-4">
+        <Layout>
             <Card className="w-full max-w-md bg-white shadow-lg">
-                <CardHeader className="bg-[#DEB8E9] text-white rounded-t-lg">
+                <CardHeader className="bg-[#A569BD] text-white rounded-t-lg">
                     <CardTitle className="text-2xl font-bold">Contáctanos</CardTitle>
-                    <CardDescription className="text-gray-100">
+                    <CardDescription className="text-gray-200">
                         Estamos aquí para ayudarte en tu camino de crecimiento personal.
                     </CardDescription>
                 </CardHeader>
@@ -72,17 +72,18 @@ export default function ContactPage() {
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
+                                    className="h-32"
                                 />
                             </div>
                         </div>
                         <CardFooter className="flex justify-end mt-6 p-0">
-                            <Button type="submit" className="bg-[#DEB8E9] hover:bg-[#E6CED9] text-white">
+                            <Button type="submit" className="bg-[#A569BD] hover:bg-[#8E44AD] text-white">
                                 Enviar Mensaje
                             </Button>
                         </CardFooter>
                     </form>
                 </CardContent>
             </Card>
-        </div>
-    )
+        </Layout>
+    );
 }

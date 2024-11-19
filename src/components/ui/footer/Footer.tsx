@@ -1,12 +1,12 @@
 "use client";
 import Link from "next/link";
 import {
-    FaFacebookF,
-    FaTwitter,
     FaInstagram,
-    FaLinkedinIn,
+    FaWhatsapp,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { AiOutlineMail } from "react-icons/ai";
+
 
 export default function Footer() {
     return (
@@ -24,9 +24,7 @@ export default function Footer() {
                         className="text-sm"
                         style={{ textShadow: "1px 1px 2px black" }}
                     >
-                        En SeguraMente, nos dedicamos a proporcionar soluciones innovadoras
-                        que faciliten tu día a día. Nuestro compromiso es ofrecer productos
-                        de alta calidad que satisfagan tus necesidades.
+                        SeguraMente es una comunidad de apoyo emocional para jóvenes que buscan comprender mejor sus emociones en la era digital. Ofrecemos recursos accesibles y espacios de interacción donde todos pueden sentirse escuchados y acompañados.
                     </p>
                 </div>
 
@@ -62,28 +60,23 @@ export default function Footer() {
                         className="text-lg font-semibold mb-4"
                         style={{ textShadow: "1px 1px 2px black" }}
                     >
-                        Síguenos
+                        Únete a esta transformación
                     </h3>
                     <div className="flex space-x-4">
                         <SocialIcon
                             href="https://facebook.com"
                             ariaLabel="Facebook"
-                            icon={<FaFacebookF size={20} />}
+                            icon={<AiOutlineMail size={20} />}
                         />
                         <SocialIcon
                             href="https://twitter.com"
                             ariaLabel="Twitter"
-                            icon={<FaTwitter size={20} />}
+                            icon={<FaWhatsapp size={20} />}
                         />
                         <SocialIcon
                             href="https://instagram.com"
                             ariaLabel="Instagram"
                             icon={<FaInstagram size={20} />}
-                        />
-                        <SocialIcon
-                            href="https://linkedin.com"
-                            ariaLabel="LinkedIn"
-                            icon={<FaLinkedinIn size={20} />}
                         />
                     </div>
                 </div>

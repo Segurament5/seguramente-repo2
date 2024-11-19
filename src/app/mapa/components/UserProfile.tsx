@@ -16,7 +16,7 @@ export function UserProfile({ onStart }: UserProfileProps) {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-900 to-purple-900 flex items-center justify-center p-4">
+        <div className="min-h-[50vh] bg-gradient-to-br from-[#907299] to-[#704358] p-8 flex items-center justify-center p-4">
             <div className="max-w-md w-full bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
                 <div className="flex flex-col items-center text-center mb-8">
                     <Trophy className="w-16 h-16 text-yellow-400 mb-4" />

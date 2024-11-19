@@ -1,6 +1,6 @@
 // src/components/Layout/Header.jsx
 "use client";
-import { Brain } from "lucide-react";
+import { Brain, Heart } from "lucide-react";
 import { Menu, X } from "lucide-react"; // Iconos para el menú hamburger
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
@@ -18,7 +18,7 @@ export default function Header() {
         { href: "/blog", label: "Blog" },
         { href: "/tips", label: "Tips" },
     ];
-
+Heart
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
@@ -28,7 +28,7 @@ export default function Header() {
             <div className="max-w-7xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center transform transition-transform duration-300 hover:scale-110">
-                    <Brain className="h-8 w-8 sm:h-10 sm:w-10" />
+                    <Heart className="h-8 w-8 sm:h-10 sm:w-10" />
                     <span className="ml-2 text-xl sm:text-2xl font-bold" style={{ textShadow: "1px 1px 2px black" }}>
                         Seguramente
                     </span>

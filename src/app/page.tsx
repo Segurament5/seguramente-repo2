@@ -4,6 +4,7 @@ import Footer from "@/components/ui/footer/Footer";
 import Header from "@/components/ui/header/Header";
 import HeroSection from "@/components/ui/heroSection/HeroSection";
 import ServicesSection from "@/components/ui/servicerSection/ServicesSection";
+import WelcomeSection from "@/components/ui/welcomeSection/WelcomeSection";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Header />
       <main className="flex-1 flex flex-col items-center justify-center">
         <HeroSection />
+        <WelcomeSection />
         <ServicesSection />
       </main>
       <Footer />

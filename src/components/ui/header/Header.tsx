@@ -17,6 +17,7 @@ export default function Header() {
         // { href: "/Sinergia", label: "Sinergia" },
         { href: "/blog", label: "Blog" },
         { href: "/tips", label: "Tips" },
+        { href: "/mapa", label: "Mapa" },
     ];
 Heart
     const toggleMobileMenu = () => {

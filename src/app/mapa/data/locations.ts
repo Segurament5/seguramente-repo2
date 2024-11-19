@@ -6,40 +6,40 @@ export const locations: Location[] = [
         id: 1,
         title: "Valle del Inicio",
         subtitle: "El punto de partida de tu viaje",
-        quote: "El viaje de mil millas comienza con un solo paso",
-        description: "En este tranquilo valle, donde los primeros rayos del sol iluminan tu camino, comienzas tu viaje hacia la grandeza. Cada paso que des desde aquí marcará el inicio de una nueva aventura.",
+        quote: "No se trata de ser perfecto, sino de ser constante.",
+        description: "Hoy, da ese primer paso en un proyecto o meta que has estado posponiendo, por pequeño que sea.",
         position: { x: 20, y: 80 }
     },
     {
         id: 2,
         title: "Montañas del Desafío",
         subtitle: "Superando las alturas",
-        quote: "Las dificultades preparan a personas comunes para destinos extraordinarios",
-        description: "Estas imponentes montañas representan los obstáculos que encontrarás en tu camino. Cada cumbre conquistada te hará más fuerte y te acercará a tu verdadero potencial.",
+        quote: "Eres más fuerte de lo que piensas.",
+        description: "Dedica 15 minutos a practicar algo que te acerque a tu meta, sin importar los errores.",
         position: { x: 30, y: 15 }
     },
     {
         id: 3,
         title: "Lago de la Reflexión",
         subtitle: "Un momento para meditar",
-        quote: "El éxito no es el final, el fracaso no es fatal: es el coraje para continuar lo que cuenta",
-        description: "En las tranquilas aguas de este lago, encontrarás un momento de paz para reflexionar sobre tu progreso y renovar tus fuerzas para continuar el viaje.",
+        quote: "Cada día es una nueva oportunidad para mejorar.",
+        description: "Haz una lista de tres momentos difíciles que superaste y reflexiona sobre cómo lo lograste.",
         position: { x: 55, y: 80 }
     },
     {
         id: 4,
         title: "Bosque de la Sabiduría",
         subtitle: "Compartiendo el conocimiento",
-        quote: "El liderazgo es hacer que otros sean mejores como resultado de tu presencia",
-        description: "En este antiguo bosque, tus experiencias se transforman en sabiduría que puedes compartir con otros viajeros, inspirándolos a seguir sus propios caminos.",
+        quote: "El éxito es la suma de pequeños esfuerzos repetidos día tras día.",
+        description: "Encuentra una pequeña acción que puedas hacer hoy para mejorar tu bienestar o productividad.",
         position: { x: 65, y: 40 }
     },
     {
         id: 5,
         title: "Pico de la Maestría",
         subtitle: "La cima del éxito",
-        quote: "El éxito no es la clave de la felicidad. La felicidad es la clave del éxito",
-        description: "En la cima más alta, donde el aire es más puro y la vista más clara, alcanzas el dominio de tus habilidades y la realización de tus metas más ambiciosas.",
+        quote: "Cuando dejas de compararte, encuentras tu verdadero camino.",
+        description: "Haz una cosa hoy que te acerque a tu meta, y comprométete a repetirla durante una semana.",
         position: { x: 85, y: 70 }
     }
 ];

@@ -24,8 +24,8 @@ export const services = [
         title: "Sinergia",
         icon: <HandHeart className="h-8 w-8 text-[#DEB8E9]" />,
         description: "Con sinergia, lograrás tus objetivos de manera más eficiente.",
-        link: "/recursos",
-        linkText: "Ver Recursos",
+        link: "/sinergia",
+        linkText: "Conéctate",
     },
     {
         title: "Conoce más sobre nosotros",

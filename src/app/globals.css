@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://unpkg.com/leaflet@1.9.3/dist/leaflet.css');
 
 :root {
   --background: #ffffff;
@@ -22,4 +23,45 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+.animate-dash {
+  animation: dash 1s linear infinite;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: draw 1.5s ease-out;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
 }

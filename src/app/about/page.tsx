@@ -1,20 +1,19 @@
-// src/app/about/page.tsx
-
+"use client";
 import AboutUsSection from "@/components/ui/aboutUs/AboutUs";
 import Layout from "@/components/ui/layout/Layout";
-import TestimonialsSection from "./components/TestimonialsSection";
+import PhotoGallery from "./components/PhotoGallery";
 
-
-export const metadata = {
-    title: 'Sobre Nosotros - Seguramente',
-    description: 'Conoce más sobre Seguramente, nuestra misión, visión y el equipo dedicado a empoderar a los jóvenes.',
+const metadata = {
+    title: "Sobre Nosotros - SeguraMente",
+    description:
+        "Conoce más sobre SeguraMente, nuestra misión, visión y el equipo dedicado a empoderar a los jóvenes.",
 };
 
 export default function AboutPage() {
     return (
         <Layout>
             <AboutUsSection />
-            <TestimonialsSection /> {/* Opcional */}
+            <PhotoGallery />
         </Layout>
     );
 }

@@ -1,26 +1,24 @@
-// src/components/ui/aboutUs/TeamSection.jsx
+import { cn } from "@/lib/utils";
 
-import React from "react";
+interface TeamSectionProps {
+    title: string;
+    subtitle: string;
+    content: string;
+    className?: string;
+}
 
-export default function TeamSection({ title, subtitle, content }) {
+export default function TeamSection({ title, subtitle, content, className }: TeamSectionProps) {
     return (
-        <div className="mt-12">
-            <h2
-                className="text-2xl font-semibold text-[#DEB8E9]"
-                style={{ textShadow: "1px 1px 2px black" }}
-            >
-                {title}
-            </h2>
-            <h3
-                className="mt-2 text-xl italic text-[#1c1c1c]"
-                style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
-            >
-                {subtitle}
-            </h3>
-            <p
-                className="mt-4 text-lg text-[#1c1c1c]"
-                style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
-            >
+        <div className={cn("space-y-6", className)}>
+            <div className="space-y-2">
+                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#DEB8E9] to-pink-400 bg-clip-text text-transparent">
+                    {title}
+                </h2>
+                <h3 className="text-xl italic text-gray-700">
+                    {subtitle}
+                </h3>
+            </div>
+            <p className="text-lg text-gray-600 leading-relaxed">
                 {content}
             </p>
         </div>

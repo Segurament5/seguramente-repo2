@@ -1,7 +1,7 @@
 // src/pages/index.jsx o src/app/page.jsx según tu estructura
 
 import Footer from "@/components/ui/footer/Footer";
-import Header from "@/components/ui/header/Header";
+import { Header } from "@/components/ui/header/Header";
 import HeroSection from "@/components/ui/heroSection/HeroSection";
 import ServicesSection from "@/components/ui/servicerSection/ServicesSection";
 import WelcomeSection from "@/components/ui/welcomeSection/WelcomeSection";

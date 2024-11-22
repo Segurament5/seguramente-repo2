@@ -2,6 +2,7 @@
 import Link from "next/link";
 import {
     FaInstagram,
+    FaTiktok,
     FaWhatsapp,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -77,6 +78,11 @@ export default function Footer() {
                             href="https://instagram.com"
                             ariaLabel="Instagram"
                             icon={<FaInstagram size={20} />}
+                        />
+                        <SocialIcon
+                            href="https://tiktok.com"
+                            ariaLabel="TikTok"
+                            icon={<FaTiktok  size={20} />}
                         />
                     </div>
                 </div>

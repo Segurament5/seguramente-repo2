@@ -1,12 +1,21 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, ChevronLeft, Medal } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Medal, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { motion, AnimatePresence } from 'framer-motion';
+import { cn } from "@/lib/utils";
 import { locations } from './data/locations';
 import { MapLocation } from './components/MapLocation';
 import { LocationDetails } from './components/LocationDetails';
 import { ProgressPath } from './components/ProgressPath';
 import { UserProfile } from './components/UserProfile';
 
+const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5 }
+};
 
 function MapBoard() {
     const [currentStep, setCurrentStep] = useState(0);
@@ -36,24 +45,20 @@ function MapBoard() {
             const duration = 3 * 1000;
             const animationEnd = Date.now() + duration;
 
-            const randomInRange = (min: number, max: number) => {
-                return Math.random() * (max - min) + min;
-            };
-
             const frame = () => {
                 confetti({
-                    particleCount: 2,
+                    particleCount: 3,
                     angle: 60,
                     spread: 55,
                     origin: { x: 0 },
-                    colors: ['#FFD700', '#FFA500', '#FF4500']
+                    colors: ['#DEB8E9', '#C490D1', '#907299']
                 });
                 confetti({
-                    particleCount: 2,
+                    particleCount: 3,
                     angle: 120,
                     spread: 55,
                     origin: { x: 1 },
-                    colors: ['#FFD700', '#FFA500', '#FF4500']
+                    colors: ['#DEB8E9', '#C490D1', '#907299']
                 });
 
                 if (Date.now() < animationEnd) {
@@ -71,71 +76,133 @@ function MapBoard() {
     }
 
     return (
-        <div className="min-h-[50vh] bg-gradient-to-br from-[#907299] to-[#704358] p-8">
+        <motion.div
+            initial="initial"
+            animate="animate"
+            variants={fadeInUp}
+            className={cn(
+                "min-h-[60vh] rounded-3xl overflow-hidden",
+                "bg-gradient-to-br from-[#DEB8E9] via-[#9e74a8] to-[#795e81]",
+                "p-8 md:p-12"
+            )}
+        >
             <div className="max-w-6xl mx-auto">
                 {/* Header with User Info */}
-                <div className="flex justify-between items-center mb-12">
-                    <h1 className="text-4xl font-bold text-white">
-                        Mapa del Éxito
-                    </h1>
-                    <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                        <span className="text-white font-medium">{userName}</span>
-                        <div className="flex items-center gap-2 bg-yellow-400/20 rounded-lg px-3 py-1">
-                            <Medal className="w-5 h-5 text-yellow-400" />
-                            <span className="text-yellow-400 font-bold">{currentStep + 1}</span>
-                            <span className="text-gray-400 text-sm">/ {locations.length}</span>
+                <motion.div
+                    className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12"
+                    variants={fadeInUp}
+                >
+                    <h2 className={cn(
+                        "text-3xl md:text-4xl font-bold",
+                        "bg-gradient-to-r from-white to-pink-100 bg-clip-text text-transparent",
+                        "drop-shadow-sm"
+                    )}>
+                        Tu Mapa del Éxito
+                    </h2>
+                    <div className={cn(
+                        "flex items-center gap-4",
+                        "bg-white/20 backdrop-blur-sm rounded-2xl",
+                        "px-6 py-3 shadow-lg"
+                    )}>
+                        <div className="flex items-center gap-2">
+                            <Sparkles className="w-5 h-5 text-pink-100" />
+                            <span className="text-white font-medium">{userName}</span>
+                        </div>
+                        <div className={cn(
+                            "flex items-center gap-2",
+                            "bg-white/20 rounded-xl px-4 py-2"
+                        )}>
+                            <Medal className="w-5 h-5 text-pink-100" />
+                            <span className="text-white font-bold">{currentStep + 1}</span>
+                            <span className="text-pink-100 text-sm">/ {locations.length}</span>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {/* Interactive Map */}
-                    <div className="relative aspect-square bg-indigo-800/30 rounded-2xl backdrop-blur-sm overflow-hidden">
+                    <motion.div
+                        variants={fadeInUp}
+                        className={cn(
+                            "relative aspect-square",
+                            "bg-white/10 rounded-2xl backdrop-blur-sm",
+                            "shadow-xl overflow-hidden",
+                            "border border-white/20"
+                        )}
+                    >
                         {/* Map Background with Path */}
                         <div className="absolute inset-0 w-full h-full">
                             <ProgressPath locations={locations} currentStep={currentStep} />
                         </div>
 
                         {/* Location Markers */}
-                        {locations.map((location, index) => (
-                            <MapLocation
-                                key={location.id}
-                                location={location}
-                                isActive={index === currentStep}
-                                isCompleted={index <= currentStep}
-                                onClick={() => setCurrentStep(index)}
-                                position={location.position}
-                            />
-                        ))}
-                    </div>
+                        <AnimatePresence>
+                            {locations.map((location, index) => (
+                                <MapLocation
+                                    key={location.id}
+                                    location={location}
+                                    isActive={index === currentStep}
+                                    isCompleted={index <= currentStep}
+                                    onClick={() => setCurrentStep(index)}
+                                    position={location.position}
+                                />
+                            ))}
+                        </AnimatePresence>
+                    </motion.div>
 
                     {/* Location Details */}
-                    <div className="space-y-8">
-                        <LocationDetails location={locations[currentStep]} />
+                    <motion.div
+                        variants={fadeInUp}
+                        className="space-y-8"
+                    >
+                        <AnimatePresence mode="wait">
+                            <LocationDetails key={currentStep} location={locations[currentStep]} />
+                        </AnimatePresence>
 
                         {/* Navigation Controls */}
                         <div className="flex justify-center gap-4">
-                            <button
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
                                 onClick={handlePrev}
                                 disabled={currentStep === 0}
-                                className="flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all text-white"
+                                className={cn(
+                                    "flex items-center gap-2 px-6 py-3",
+                                    "rounded-xl bg-white/20 hover:bg-white/30",
+                                    "text-white font-medium",
+                                    "transition-all duration-200",
+                                    "disabled:opacity-50 disabled:cursor-not-allowed",
+                                    "shadow-lg hover:shadow-xl",
+                                    "border border-white/20"
+                                )}
                             >
                                 <ChevronLeft className="w-5 h-5" />
                                 Anterior
-                            </button>
-                            <button
+                            </motion.button>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
                                 onClick={handleNext}
                                 disabled={currentStep === locations.length - 1}
-                                className="flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all text-white"
+                                className={cn(
+                                    "flex items-center gap-2 px-6 py-3",
+                                    "rounded-xl bg-white/20 hover:bg-white/30",
+                                    "text-white font-medium",
+                                    "transition-all duration-200",
+                                    "disabled:opacity-50 disabled:cursor-not-allowed",
+                                    "shadow-lg hover:shadow-xl",
+                                    "border border-white/20"
+                                )}
                             >
                                 Siguiente
                                 <ChevronRight className="w-5 h-5" />
-                            </button>
+                            </motion.button>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
+
 export default MapBoard;

@@ -1,13 +1,16 @@
-// src/components/ui/aboutUs/Subtitle.jsx
+import { cn } from "@/lib/utils";
 
-import React from "react";
+interface SubtitleProps {
+  text: string;
+  className?: string;
+}
 
-export default function Subtitle({ text }) {
+export default function Subtitle({ text, className }: SubtitleProps) {
   return (
-    <p
-      className="mt-4 text-xl italic text-center text-[#1c1c1c]"
-      style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
-    >
+    <p className={cn(
+      "text-xl italic text-gray-600 leading-relaxed",
+      className
+    )}>
       {text}
     </p>
   );

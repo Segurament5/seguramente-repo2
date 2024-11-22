@@ -1,12 +1,12 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
-import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import { Header } from "../header/Header";
 
 export default function Layout({ children }) {
 
     return (
-        <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#E6CED9] to-[#DEB8E9] text-[#1c1c1c]">
+        <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#fff5fa] to-[#DEB8E9] text-[#1c1c1c]">
             <Header />
             <AnimatePresence mode="wait">
                 <motion.main

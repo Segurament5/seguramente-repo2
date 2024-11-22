@@ -1,20 +1,18 @@
-// src/components/ui/aboutUs/Section.jsx
+import { cn } from "@/lib/utils";
 
-import React from "react";
+interface SectionProps {
+    title: string;
+    content: string;
+    className?: string;
+}
 
-export default function Section({ title, content }) {
+export default function Section({ title, content, className }: SectionProps) {
     return (
-        <div className="mt-8">
-            <h2
-                className="text-2xl font-semibold text-[#DEB8E9]"
-                style={{ textShadow: "1px 1px 2px black" }}
-            >
+        <div className={cn("space-y-4", className)}>
+            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#DEB8E9] to-pink-400 bg-clip-text text-transparent">
                 {title}
             </h2>
-            <p
-                className="mt-4 text-lg text-[#1c1c1c]"
-                style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
-            >
+            <p className="text-gray-600 leading-relaxed">
                 {content}
             </p>
         </div>

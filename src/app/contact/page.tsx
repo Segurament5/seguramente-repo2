@@ -55,6 +55,7 @@ export default function ContactPage() {
                 description: "Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente.",
                 variant: "destructive",
             });
+            console.error(error);
         } finally {
             setIsSubmitting(false);
         }

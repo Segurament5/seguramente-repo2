@@ -24,6 +24,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
         postData = await getBlogPostData(slug);
     } catch (error) {
         postData = null;
+        console.error(error);
     }
 
     if (!postData) {

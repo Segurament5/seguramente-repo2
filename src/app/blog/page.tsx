@@ -1,14 +1,9 @@
 // src/app/blog/page.tsx
 
-import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { getSortedBlogPosts, BlogPost } from '@/lib/blog';
 import Layout from '@/components/ui/layout/Layout';
-
-interface BlogProps {
-    allPostsData: BlogPost[];
-}
 
 export const metadata = {
     title: 'Blog - Seguramente',

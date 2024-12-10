@@ -30,7 +30,7 @@ export default function TestimonialsSection() {
                             <CardContent>
                                 <FaQuoteLeft className="text-[#A569BD] h-6 w-6 mb-2" />
                                 <CardDescription className="text-gray-700 italic">
-                                    "{testimonial.message}"
+                                    &quot;{testimonial.message}&quot;
                                 </CardDescription>
                                 <div className="mt-4 text-right">
                                     <p className="font-semibold text-gray-800">{testimonial.name}</p>

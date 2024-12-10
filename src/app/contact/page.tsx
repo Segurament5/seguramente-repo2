@@ -75,7 +75,7 @@ export default function ContactPage() {
                             <div className="space-y-4">
                                 <h1 className={cn(
                                     "text-4xl md:text-5xl font-bold",
-                                    "bg-gradient-to-r from-[#DEB8E9] to-pink-400 bg-clip-text text-transparent"
+                                    "bg-gradient-to-r from-[#6b5172] to-pink-400 bg-clip-text text-transparent"
                                 )}>
                                     Contáctanos
                                 </h1>

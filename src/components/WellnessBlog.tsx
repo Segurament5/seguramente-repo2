@@ -66,7 +66,7 @@ export default function WellnessBlog() {
               <Sparkles className="w-8 h-8 text-pink-500" />
               <h1 className={cn(
                 "text-4xl md:text-5xl font-bold",
-                "bg-gradient-to-r from-[#DEB8E9] to-pink-400 bg-clip-text text-transparent"
+                "bg-gradient-to-r from-[#9d73a8] to-pink-400 bg-clip-text text-transparent"
               )}>
                 Ejercicios de Bienestar Mental
               </h1>

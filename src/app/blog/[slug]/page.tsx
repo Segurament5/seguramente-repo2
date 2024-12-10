@@ -5,21 +5,13 @@ import { getAllBlogSlugs, getBlogPostData, BlogPost } from '@/lib/blog';
 import { FaCalendarAlt } from 'react-icons/fa';
 import Layout from '@/components/ui/layout/Layout';
 
-interface BlogPostProps {
-    params: {
-        slug: string;
-    };
-    searchParams?: {
-        [key: string]: string | string[];
-    };
-}
-
-export const metadata = {
-    title: 'Blog - Seguramente',
-    description: 'Lee nuestras últimas publicaciones sobre crecimiento personal, gestión de emociones y más.',
-};
-
-export default async function BlogPostPage({ params }: BlogPostProps) {
+export default async function BlogPostPage({
+    params,
+    searchParams,
+}: {
+    params: { slug: string };
+    searchParams?: { [key: string]: string | string[] };
+}) {
     const { slug } = params;
     let postData: BlogPost | null = null;
 
@@ -57,6 +49,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
         </Layout>
     );
 }
+
 
 // Generación de rutas estáticas
 export async function generateStaticParams() {

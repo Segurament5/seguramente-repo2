@@ -9,6 +9,9 @@ interface BlogPostProps {
     params: {
         slug: string;
     };
+    searchParams?: {
+        [key: string]: string | string[];
+    };
 }
 
 export const metadata = {
@@ -35,7 +38,10 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
         <Layout>
             <article className="w-full py-12 md:py-24 lg:py-32 bg-white flex justify-center">
                 <div className="container px-4 md:px-6 max-w-3xl">
-                    <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-4 text-[#A569BD]" style={{ textShadow: "1px 1px 2px black" }}>
+                    <h1
+                        className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-4 text-[#A569BD]"
+                        style={{ textShadow: '1px 1px 2px black' }}
+                    >
                         {postData.title}
                     </h1>
                     <div className="flex items-center text-gray-500 mb-6">
